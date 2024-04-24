@@ -1,24 +1,15 @@
-'use client';
+"use client";
 
-import { list, type PutBlobResult } from '@vercel/blob';
-import { useState, useRef, useEffect } from 'react';
+import type { PutBlobResult } from "@vercel/blob";
+import Image from "next/image";
+import { useState, useRef } from "react";
 
 export default function AvatarUploadPage() {
   const inputFileRef = useRef<HTMLInputElement>(null);
   const [blob, setBlob] = useState<PutBlobResult | null>(null);
-  const [files, setFiles] = useState<string[]>([]);
-
-  useEffect(() => {
-    async function fetchFiles() {
-      const response = await list({ token: "vercel_blob_rw_zmxC54gpxmW4dZ1F_kW7EJeevhxAqZoGDWcr4yFmy3XwZry" });
-      setFiles(response.blobs.map(blob => blob.pathname));
-    }
-    fetchFiles();
-  }, [blob]);
-
   return (
     <>
-      <h1>Upload Your Avatar</h1>
+      <h1 className="text-6xl mb-12">Upload Your file:</h1>
 
       <form
         onSubmit={async (event) => {
@@ -33,9 +24,9 @@ export default function AvatarUploadPage() {
           const response = await fetch(
             `/api/avatar/upload?filename=${file.name}`,
             {
-              method: 'POST',
+              method: "POST",
               body: file,
-            },
+            }
           );
 
           const newBlob = (await response.json()) as PutBlobResult;
@@ -44,19 +35,16 @@ export default function AvatarUploadPage() {
         }}
       >
         <input name="file" ref={inputFileRef} type="file" required />
-        <button type="submit">Upload</button>
+        <button className="bg-[#4c4c4c] hover:bg-[#727272] hover:scale-105 transition-transform text-white font-bold py-2 px-4 rounded " type="submit">Upload</button>
       </form>
       {blob && (
-        <div>
-          Blob url: <a href={blob.url}>{blob.url}</a>
+        <div className="p-8 m-8 border-2 border-slate-900 bg-slate-800 flex flex-col gap-8 items-center">
+          <Image className="border-2" src={blob.url} width={200} height={200} alt="avatar" />
+          <div>
+          Blob url: <a href={blob.url} className="underline">{blob.pathname}</a>
+          </div>
         </div>
       )}
-         <h2>Current Files:</h2>
-      <ul>
-        {files.map((file, index) => (
-          <li key={index}>{file}</li>
-        ))}
-      </ul>
     </>
   );
 }

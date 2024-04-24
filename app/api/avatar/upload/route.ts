@@ -5,16 +5,6 @@ export async function POST(request: Request): Promise<NextResponse> {
   const { searchParams } = new URL(request.url);
   const filename = searchParams.get('filename');
 
-  if (filename === null) {
-    // Handle the case where filename is null
-    return NextResponse.json({ error: 'No filename provided' });
-  }
-
-  if (request.body === null) {
-    // Handle the case where request.body is null
-    return NextResponse.json({ error: 'No request body provided' });
-  }
-
   // ⚠️ The below code is for App Router Route Handlers only
   const blob = await put(filename, request.body, {
     access: 'public',
