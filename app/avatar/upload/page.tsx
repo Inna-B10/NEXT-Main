@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Indicates that this code will be run on the client-side
 
 import type { PutBlobResult } from "@vercel/blob";
 import Image from "next/image";
