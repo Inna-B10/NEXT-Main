@@ -1,6 +1,7 @@
 //! JS version can be seen at avatar/jsversion/page.js
 
 "use client"; // Indicates that this code will be run on the client-side
+import { LinkButton, ViewButton } from "@/app/components/Buttons";
 // Imports the PutBlobResult type from the @vercel/blob package: https://www.npmjs.com/package/@vercel/blob
 import type { PutBlobResult } from "@vercel/blob";
 // Imports the Image component from the next/image package: https://www.npmjs.com/package/next/image
@@ -13,6 +14,15 @@ export default function AvatarUploadPage() {
   const inputFileRef = useRef<HTMLInputElement>(null);
   // Initializes state to manage the blob data. PutBlobResult is a type that represents the result of a PutBlob operation.
   const [blob, setBlob] = useState<PutBlobResult | null>(null);
+  const [blobs, setBlobs] = useState<PutBlobResult[]>([]);
+
+  const getBlobs = async () => {
+    const response = await fetch("/api/avatar/download", {
+      method: "GET",
+    });
+    const allBlobs = await response.json();
+    setBlobs(allBlobs);
+  };
 
   // Defines an asynchronous function named upload to handle form submission.
   const upload = async (event: React.FormEvent) => {
@@ -76,6 +86,27 @@ export default function AvatarUploadPage() {
           </div>
         </div>
       )}
+      <div className="p-8 w-full grid justify-center">
+        <ViewButton onClick={getBlobs}>View all blobs</ViewButton>
+        
+        <div className="flex justify-center flex-wrap gap-8">
+          {blobs.map((blob, index) => (
+            <div
+              key={blob.pathname + " " + index}
+              className="p-8 w-fit border-2 border-slate-900 bg-slate-800 flex flex-col gap-8 items-center"
+            >
+              <Image
+                className="border-2"
+                src={blob.url}
+                width={200}
+                height={200}
+                alt="avatar"
+              />
+              <LinkButton href={blob.url}>view</LinkButton>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 }
