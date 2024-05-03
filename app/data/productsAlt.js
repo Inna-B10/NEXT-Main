@@ -1,7 +1,7 @@
+//! alternative method for writing the data
 
-{
-  "products": [
-    {
+export const productData = {
+    1: {
       "id": 1,
       "name": "Laptop",
       "brand": "ExampleBrand",
@@ -10,7 +10,7 @@
       "stock": 50,
       "image": "/products/laptop.jpg"
     },
-    {
+    2: {
       "id": 2,
       "name": "Smartphone",
       "brand": "TechCo",
@@ -19,7 +19,7 @@
       "stock": 100,
       "image": "/products/smartphone.jpg"
     },
-    {
+    3: {
       "id": 3,
       "name": "Headphones",
       "brand": "AudioTech",
@@ -28,7 +28,7 @@
       "stock": 25,
       "image": "/products/headphones.jpg"
     },
-    {
+    4: {
       "id": 4,
       "name": "Tablet",
       "brand": "TabCorp",
@@ -37,7 +37,7 @@
       "stock": 30,
       "image": "/products/tablet.jpg"
     },
-    {
+    5: {
       "id": 5,
       "name": "Camera",
       "brand": "SnapShot",
@@ -46,7 +46,7 @@
       "stock": 15,
       "image": "/products/camera.jpg"
     },
-    {
+    6: {
       "id": 6,
       "name": "Smartwatch",
       "brand": "TimeTech",
@@ -55,7 +55,7 @@
       "stock": 20,
       "image": "/products/smartwatch.jpg"
     },
-    {
+    7: {
       "id": 7,
       "name": "Gaming Console",
       "brand": "GameMaster",
@@ -64,7 +64,7 @@
       "stock": 40,
       "image": "/products/gaming-console.jpg"
     },
-    {
+    8: {
       "id": 8,
       "name": "Gaming computer",
       "brand": "PCPower",
@@ -73,7 +73,7 @@
       "stock": 35,
       "image": "/products/gaming-computer.jpg"
     },
-    {
+    9: {
       "id": 9,
       "name": "Wireless Speaker",
       "brand": "SoundWave",
@@ -82,7 +82,7 @@
       "stock": 50,
       "image": "/products/wireless-speaker.jpg"
     },
-    {
+    10: {
       "id": 10,
       "name": "External Hard Drive",
       "brand": "DataSafe",
@@ -91,7 +91,7 @@
       "stock": 60,
       "image": "/products/external-hard-drive.jpg"
     },
-    {
+    11: {
       "id": 11,
       "name": "Fitness Tracker",
       "brand": "FitGear",
@@ -100,7 +100,7 @@
       "stock": 75,
       "image": "/products/fitness-tracker.jpg"
     },
-    {
+    12: {
       "id": 12,
       "name": "Bluetooth Earbuds",
       "brand": "BudBeats",
@@ -109,7 +109,7 @@
       "stock": 55,
       "image": "/products/bluetooth-earbuds.jpg"
     },
-    {
+    13: {
       "id": 13,
       "name": "Wireless Mouse",
       "brand": "ClickTech",
@@ -118,7 +118,7 @@
       "stock": 65,
       "image": "/products/wireless-mouse.jpg"
     },
-    {
+    14: {
       "id": 14,
       "name": "Printer",
       "brand": "PrintMaster",
@@ -127,7 +127,7 @@
       "stock": 25,
       "image": "/products/printer.jpg"
     },
-    {
+    15: {
       "id": 15,
       "name": "Virtual Reality Headset",
       "brand": "VRXperience",
@@ -136,7 +136,7 @@
       "stock": 15,
       "image": "/products/virtual-reality-headset.jpg"
     },
-    {
+    16: {
       "id": 16,
       "name": "Portable Charger",
       "brand": "PowerBoost",
@@ -145,5 +145,7 @@
       "stock": 40,
       "image": "/products/portable-charger.jpg"
     }
-  ]
-}
+  };
+  
+
+  
