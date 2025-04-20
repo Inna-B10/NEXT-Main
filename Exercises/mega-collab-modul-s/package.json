@@ -1,0 +1,45 @@
+{
+  "name": "mega-collab-modul-s",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "clsx": "^2.1.1",
+    "date-fns": "^2.30.0",
+    "next": "14.2.3",
+    "next-themes": "^0.3.0",
+
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-paginate": "^8.2.0",
+    "react-plock": "^3.2.0",
+    "react-query": "^3.39.3",
+    "react-scroll": "^1.9.0",
+    "swr": "^2.2.5",
+    "tailwind-merge": "^2.3.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
