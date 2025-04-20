@@ -1,8 +1,13 @@
+### Deployed on [Vercel](https://mega-collab-modul-s-u9ph.vercel.app/)
+
+---
 
 # Group project @ Kodehode
+
 This is a project where we will learn how to interact with github as part of a team of collaborators. We will experience how to create branches, open issues and create pull requests among many other things.
 
 ## Project goals
+
 - Github actions
 - NextJS/React
   - Components
