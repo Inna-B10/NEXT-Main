@@ -1,8 +1,9 @@
-export default function AboutPage() {
+import { AboutPageItems } from "./AboutContent";
+
+export default async function AboutPage() {
   return (
     <>
-      <h1>This is about Sparta!</h1>
-      <p>This is the about page</p>
+      <AboutPageItems />
     </>
   );
 }
