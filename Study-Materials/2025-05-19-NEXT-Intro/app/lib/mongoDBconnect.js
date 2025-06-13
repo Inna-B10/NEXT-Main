@@ -9,7 +9,7 @@ if (!uri) {
 
 const client = new MongoClient(uri);
 
-export async function connectToDataBase() {
+export async function connectToDatabase() {
   try {
     await client.connect();
     return client.db(dbName);
